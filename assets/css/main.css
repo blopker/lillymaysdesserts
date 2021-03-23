@@ -250,11 +250,11 @@ header
 }
 
 .header-area .main-nav .logo {
+  font-family: 'Dancing Script', cursive;
   line-height: 100px;
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 28px;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 2px;
   float: left;
   -webkit-transition: all 0.3s ease 0s;
@@ -849,7 +849,7 @@ about
 
 #about {
   margin-top: 20px;
-  padding: 100px 0px 0px 0px;
+  padding: 50px 0px 0px 0px;
   position: relative;
   z-index: 9;
 }

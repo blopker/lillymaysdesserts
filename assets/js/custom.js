@@ -14,27 +14,6 @@
 	  }
 	});	
 
-	$('.search-icon a').on("click", function(event) {
-	    event.preventDefault();
-	    $("#search").addClass("open");
-	    $('#search > form > input[type="search"]').focus();
-	  });
-
-	  $("#search, #search button.close").on("click keyup", function(event) {
-	    if (
-	      event.target == this ||
-	      event.target.className == "close" ||
-	      event.keyCode == 27
-	    ) {
-	      $(this).removeClass("open");
-	    }
-	  });
-
-	  $("#search-box").submit(function(event) {
-	    event.preventDefault();
-	    return false;
-	  });
-
 	// Window Resize Mobile Menu Fix
 	mobileNav();
 
@@ -111,26 +90,6 @@
 	        }
 	    });
 	}
-
-
-	// Page loading animation
-	$(window).on('load', function() {
-		if($('.cover').length){
-			$('.cover').parallax({
-				imageSrc: $('.cover').data('image'),
-				zIndex: '1'
-			});
-		}
-
-		$("#preloader").animate({
-			'opacity': '0'
-		}, 600, function(){
-			setTimeout(function(){
-				$("#preloader").css("visibility", "hidden").fadeOut();
-			}, 300);
-		});
-	});
-
 
 	// Window Resize Mobile Menu Fix
 	$(window).on('resize', function() {

@@ -62,12 +62,10 @@
 				$(this).removeClass('active');
 			})
 			$(this).addClass('active');
-		  
-			var target = this.hash,
-			menu = target;
-			var target = $(this.hash);
+			var target = this.hash;
+			var $target = $(this.hash);
 			$('html, body').stop().animate({
-				scrollTop: (target.offset().top) - 79
+				scrollTop: ($target.offset().top) - 79
 			}, 500, 'swing', function () {
 				window.location.hash = target;
 				$(document).on("scroll", onScroll);

@@ -20,7 +20,10 @@
 
 	// Scroll animation init
 	window.sr = new scrollReveal();
-	
+	if(window.setNav){
+		$('.nav a').removeClass('active')
+		$('a[href$=\''+setNav+'\']').toggleClass('active')
+	}
 
 	// Menu Dropdown Toggle
 	if($('.menu-trigger').length){
@@ -78,7 +81,10 @@
 	    var scrollPos = $(document).scrollTop();
 	    $('.nav a').each(function () {
 	        var currLink = $(this);
-	        var refElement = $(currLink.attr("href"));
+	        var refElement = $(new URL(currLink.attr('href'), window.location.origin).hash);
+			if(refElement.length == 0){
+				return;
+			}
 	        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
 	            $('.nav ul li a').removeClass("active");
 	            currLink.addClass("active");

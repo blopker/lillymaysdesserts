@@ -7,44 +7,22 @@
         </div>
       </div>
     </div>
-      <h3 class="mb-3 mt-5">Breakfast & Brunch</h3>
-      <ul>
-        <li><strong>Babka</strong></li>
-        <li><strong>Sticky Buns</strong></li>
-        <li><strong>Bran Muffins</strong></li>
-        <li><strong>Cheese Board</strong></li>
-        <li><strong>Breads</strong> (choice of zucchini, carrot apple, pumpkin or banana bread)</li>
-        <li><strong>Beignets</strong> with choice of accompaniment (Can only be made on site, must have a kitchen available)</li>
-        <li><strong>Local Fruit Salad</strong> (GF)</li>
-        <li><strong>Yogurt Bar</strong> with house-made yogurt from local dairy, farmers market seasonal fruit, and Seasonal granola (GF)</li>
-        <li><strong>Soft Pretzels</strong></li>
-      </ul>
-      <h3 class="mb-3 mt-5">Lunch & Dinner</h3>
-      <ul>
-        <li><strong>Chocolate Crunch Bar</strong> </li>
-        <li><strong>Tiramisu Cheesecake</strong> </li>
-        <li><strong>Chocolate Chip Cookies</strong> </li>
-        <li><strong>Red Velvet Brownies</strong> </li>
-        <li><strong>Sesame Cocoa Bites</strong> </li>
-        <li><strong>Banana Pudding trifle</strong> </li>
-        <li><strong>Strawberry Rice Krispy Treat</strong> (Can be made GF)</li>
-        <li><strong>Chocolate Torte</strong> (GF) </li>
-        <li><strong>Sexy Brownie</strong> with brownie, oreo, and blondie layers </li>
-        <li><strong>Panna Cotta Cups</strong> with strawberry crumble and fresh berries (seasonal) (GF)</li>
-        <li><strong>Pretzel Bread Pudding</strong> with whipped cream </li>
-        <li><strong>Mini Strawberry Shortcakes Trifles</strong> (seasonal) </li>
-        <li><strong>Chocolate Truffles</strong> (Strawberry, Dark Chocolate Orange, Milk Chocolate Honey, Vegan and Seasonal Flavors Available) (GF) </li>
-      </ul>
-      <h3 class="mb-3 mt-5">Cake Flavors</h3>
-      <ul>
-        <li><strong>Carrot Cake</strong> with cream cheese frosting and toasted coconut </li>
-        <li><strong>Red Velvet</strong> with cream cheese frosting, ganache and raspberries </li>
-        <li><strong>Chocolate Peanut butter</strong> devil&#39;s food cake, peanut butter pudding, chocolate ganache </li>
-        <li><strong>German Chocolate Cake</strong> </li>
-        <li><strong>Banana Cake</strong> dulce pudding, buttercream </li>
-        <li><strong>Chocolate Cheerwine Cake</strong> (GF) with buttercream </li>
-        <li><strong>Orange Dreamsicle</strong> Sicilian orange cake, diplomat cream, citrus buttercream </li>
-        <li><strong>S'more Cake</strong> with devil&#39;s food cake, graham cracker pudding, marshmallow pudding, and bruleed swiss meringues </li>
-      </ul>
+    {% for section in site.data.menu %}
+    <h3 class="mb-3 mt-5">{{section.title}}</h3>
+    <ul>
+      {% for item in section.items %}
+        <li>
+          <strong>{{item.title}}</strong>
+          {{item.desc}}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+    <div class="mt-5">
+    ***Lilly May’s works to use local vendors and products whenever possible. Therefore all menu items listed are subject to change based on seasonality and availability. 
+      <br>
+    ***Inquiries for events of 20 or more people made less than a month before the event date will automatically have a 15% rush order fee added to the Invoice.
+  </div>
   </div>
 </section>
+

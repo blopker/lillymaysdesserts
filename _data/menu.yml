@@ -1,0 +1,70 @@
+- title: Brunch Board Selections
+  items:
+    - title: Babka Loaf
+    - title: Pecan Sticky Buns
+    - title: Bran Muffins
+      desc: with spiced honey butter
+    - title: Cheese Board
+      desc: with artisan cheeses and market bread
+    - title: Quick Breads
+      desc: zucchini, carrot apple, pumpkin and banana bread all served with cultured honey butter and maldon
+    - title: Beignets
+      desc: with choice of accompaniment (Can only be made on site, must have a kitchen available)
+    - title: Seasonal Fruit
+      desc: (GF)
+    - title: Yogurt Bar
+      desc: with house-made yogurt from local dairy, farmers market seasonal fruit, and Seasonal granola (GF)
+    - title: Soft Pretzels
+      desc: (sweet or savory)
+
+- title: Sweet Bites
+  items:
+    - title: Chocolate Crunch Bar
+      desc: (contains nuts)
+    - title: Tiramisu Cheesecake
+    - title: Chocolate Chip Cookies
+      desc: (with or without nuts)
+    - title: Red Velvet Brownies
+    - title: Sexy Brownie
+      desc: with brownie, oreo, and blondie layers
+    - title: Sesame Cocoa Bites
+    - title: Seasonal Rice Krispy Treat
+      desc: (Can be made GF)
+    - title: Chocolate Torte with accompaniment
+      desc: (GF)
+    - title: Fair Trade Chocolate Truffles
+      desc: Dark Chocolate Orange, Milk Chocolate Honey, Vegan and Seasonal Flavors Available (GF)
+
+- title: Dessert Cups
+  items:
+    - title: Banana Pudding
+      desc: with dulce de leche and brown butter crumble
+    - title: Panna Cotta
+      desc: with seasonal accompaniment (GF)
+    - title: Dirt ‘n Worms
+      desc: with chocolate cremeux, soil and whipped cream
+    - title: Pretzel Bread Pudding
+      desc: with  whipped cream
+    - title: Strawberry Shortcake Trifle
+      desc: with orange cake and roasted strawberries (Seasonal)
+    - title: Seasonal Pudding Cups
+      desc: (Seasonal)
+
+- title: Cake Flavors
+  items:
+    - title: Carrot Cake
+      desc: with cream cheese frosting and toasted coconut
+    - title: Red Velvet Cake
+      desc: with cream cheese frosting, dark chocolate ganache and raspberries
+    - title: Peanut Butter Cup Cake
+      desc: with devil's food cake, peanut butter pudding and chocolate ganache
+    - title: Banana Caramel Cake
+      desc: with dulce de leche pudding and cinnamon buttercream
+    - title: Orange Dreamsicle Cake
+      desc: with Sicilian orange cake, diplomat cream and citrus buttercream
+    - title: S'mores Cake
+      desc: with devil's food cake, graham cracker pudding and bruleed swiss meringue
+    - title: Cheer Wine Chocolate Cake
+      desc: with vanilla buttercream and luxardo cherries (GF)
+    - title: Brown Butter Cake
+      desc: with tonka bean buttercream and seasonal fruit

@@ -6,7 +6,7 @@
     <div class="grid">
       {% for image in site.data.grid %}
       <a href="assets/images/{{image}}">
-        <img class="item" src="assets/images/{{image}}" alt="" />
+        <img loading="lazy" class="item" src="assets/images/{{image}}" alt="" />
       </a>
       {% endfor %}
     </div>

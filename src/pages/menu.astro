@@ -1,0 +1,13 @@
+---
+import MenuSection from "../components/Menu.astro";
+import Contact from "../components/Contact.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Menu">
+  <script is:inline>
+    window.setNav = "/menu";
+  </script>
+  <MenuSection />
+  <Contact />
+</Layout>

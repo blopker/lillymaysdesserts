@@ -1,0 +1,20 @@
+---
+import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
+import Grid from "../components/Grid.astro";
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Home">
+  <!-- {% include header.html %} -->
+  <Header />
+
+  <!-- {% include about.html %} -->
+  <About />
+  <!-- {% include grid.html %} -->
+  <Grid />
+
+  <!-- {% include contact.html %} -->
+  <Contact />
+</Layout>

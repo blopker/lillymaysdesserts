@@ -1,11 +1,8 @@
 start:
-	bundle exec jekyll serve --host 0.0.0.0 --livereload
+	npm run dev
 
 build:
-	bundle exec jekyll build
+	npm run build
 
 install:
-	bundle install
-
-docker:
-	docker run -it -v .:/app ruby:latest bash
+	npm install

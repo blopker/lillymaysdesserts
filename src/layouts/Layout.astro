@@ -1,22 +1,40 @@
-<!DOCTYPE html>
+---
+import config from "../config.json";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
 <html lang="en">
   <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STZLXY5HXK"></script>
-    <script>
+    <script
+      async
+      is:inline
+      src="https://www.googletagmanager.com/gtag/js?id=G-STZLXY5HXK"></script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-STZLXY5HXK');
+      window.gtag = function () {
+        window.dataLayer.push(arguments);
+      };
+      gtag("js", new Date());
+      gtag("config", "G-STZLXY5HXK");
     </script>
-    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/font-awesome.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>{title} - {config.title}</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="{{ site.description }}" />
+    <meta name="description" content={config.description} />
     <meta name="author" content="Lilly May's Desserts" />
-    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
       rel="stylesheet"
@@ -25,18 +43,6 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/assets/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/assets/css/font-awesome.css"
-    />
-    <link rel="stylesheet" href="/assets/css/main.css" />
   </head>
   <body>
     <header class="header-area header-sticky">
@@ -45,9 +51,7 @@
           <div class="col-12">
             <nav class="main-nav">
               <!-- ***** Logo Start ***** -->
-              <a href="index.html" class="logo">
-                Lilly May's
-              </a>
+              <a href="index.html" class="logo"> Lilly May's </a>
               <!-- ***** Logo End ***** -->
               <!-- ***** Menu Start ***** -->
               <ul class="nav">
@@ -72,7 +76,7 @@
         </div>
       </div>
     </header>
-    {{ content }}
+    <slot />
     <footer>
       <div class="container">
         <div class="row">
@@ -80,13 +84,17 @@
             <div class="right-text-content">
               <ul class="social-icons">
                 <li>
-                  <a href="{{site.links.etsy}}"><i class="fab fa-etsy"></i></a>
+                  <a href={config.links.etsy}><i class="fab fa-etsy"></i></a>
                 </li>
                 <li>
-                  <a href="{{site.links.facebook}}"><i class="fab fa-facebook-f"></i></a>
+                  <a href={config.links.facebook}
+                    ><i class="fab fa-facebook-f"></i></a
+                  >
                 </li>
                 <li>
-                  <a href="{{site.links.instagram}}"><i class="fab fa-instagram"></i></a>
+                  <a href={config.links.instagram}
+                    ><i class="fab fa-instagram"></i></a
+                  >
                 </li>
               </ul>
             </div>
@@ -102,16 +110,16 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="/assets/js/jquery.min.js"></script>
+    <script is:inline src="/js/jquery.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="/assets/js/bootstrap.min.js"></script>
+    <script is:inline src="/js/bootstrap.min.js"></script>
 
     <!-- Plugins -->
-    <script src="/assets/js/scrollreveal.min.js"></script>
-    <script src="/assets/js/waypoints.min.js"></script>
+    <script is:inline src="/js/scrollreveal.min.js"></script>
+    <script is:inline src="/js/waypoints.min.js"></script>
 
     <!-- Global Init -->
-    <script src="/assets/js/custom.js"></script>
+    <script is:inline src="/js/custom.js"></script>
   </body>
 </html>

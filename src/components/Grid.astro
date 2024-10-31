@@ -1,0 +1,20 @@
+---
+import grid from "../grid.json";
+---
+
+<section class="section" id="grid">
+  <div class="container">
+    <div class="section-heading">
+      <h6>Gallery</h6>
+    </div>
+    <div class="grid">
+      {
+        grid.map((image) => (
+          <a href={`/images/${image}`}>
+            <img loading="lazy" class="item" src={`/images/${image}`} alt="" />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

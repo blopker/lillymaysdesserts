@@ -23,16 +23,16 @@ Table of contents
 12. portfolio
 
 --------------------------------------------- */
-/* 
+/*
 ---------------------------------------------
 font & reset css
---------------------------------------------- 
+---------------------------------------------
 */
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
-/* 
+/*
 ---------------------------------------------
 reset
---------------------------------------------- 
+---------------------------------------------
 */
 html,
 body,
@@ -175,10 +175,10 @@ p {
   color: #2a2a2a;
 }
 
-/* 
+/*
 ---------------------------------------------
 global styles
---------------------------------------------- 
+---------------------------------------------
 */
 html,
 body {
@@ -272,10 +272,10 @@ body {
   color: #2a2a2a;
 }
 
-/* 
+/*
 ---------------------------------------------
 header
---------------------------------------------- 
+---------------------------------------------
 */
 
 .background-header {
@@ -424,7 +424,9 @@ header
   transform: translateY(+2em);
   visibility: hidden;
   z-index: -1;
-  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
+  transition:
+    all 0.3s ease-in-out 0s,
+    visibility 0s linear 0.3s,
     z-index 0s linear 0.01s;
 }
 
@@ -586,11 +588,16 @@ header
 }
 
 .header-area.header-sticky {
-  min-height: 80px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
 }
 
 .header-area .nav {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .header-area.header-sticky .nav li a.active {
@@ -713,14 +720,14 @@ header
   }
 }
 
-/* 
+/*
 ---------------------------------------------
 banner
---------------------------------------------- 
+---------------------------------------------
 */
 
 #top {
-  padding-top: 100px;
+  padding-top: 120px;
 }
 
 #top .col-lg-4,
@@ -1268,10 +1275,10 @@ chefs
   color: #2a2a2a;
 }
 
-/* 
+/*
 ---------------------------------------------
 reservation
---------------------------------------------- 
+---------------------------------------------
 */
 
 #reservation .section-heading {
@@ -1554,10 +1561,10 @@ offers
   color: #fff;
 }
 
-/* 
+/*
 ---------------------------------------------
 footer
---------------------------------------------- 
+---------------------------------------------
 */
 
 footer {
@@ -1617,15 +1624,15 @@ footer .right-text-content ul li a:hover {
   color: #2a2a2a;
 }
 
-/* 
+/*
 ---------------------------------------------
 responsive
---------------------------------------------- 
+---------------------------------------------
 */
 
 @media (max-width: 992px) {
   #top {
-    padding-top: 100px;
+    padding-top: 120px;
     height: auto;
   }
   .header-area .main-nav .nav li.submenu:after {

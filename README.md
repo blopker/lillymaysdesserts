@@ -1,3 +1,3 @@
 # lillymaysdesserts
 
-Commit and push to deploy.
+Commit and push to deploy!

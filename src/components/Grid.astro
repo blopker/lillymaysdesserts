@@ -10,8 +10,8 @@ import grid from "../grid.json";
     <div class="grid">
       {
         grid.map((image) => (
-          <a href={`/images/${image}`}>
-            <img loading="lazy" class="item" src={`/images/${image}`} alt="" />
+          <a href={`/images/${image.href}`}>
+            <img loading="lazy" class="item" src={`/images/${image.href}`} alt={image.alt_text} />
           </a>
         ))
       }

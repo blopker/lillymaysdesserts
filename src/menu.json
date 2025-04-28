@@ -3,9 +3,6 @@
     "title": "Brunch Board Selections",
     "items": [
       {
-        "title": "Babka Loaf"
-      },
-      {
         "title": "Pecan Sticky Buns"
       },
       {
@@ -13,8 +10,7 @@
         "desc": "with spiced honey butter"
       },
       {
-        "title": "Cheese Board",
-        "desc": "with artisan cheeses and market bread"
+        "title": "Coffee Cake"
       },
       {
         "title": "Quick Breads",
@@ -27,14 +23,6 @@
       {
         "title": "Seasonal Fruit",
         "desc": "(GF)"
-      },
-      {
-        "title": "Yogurt Bar",
-        "desc": "with house-made yogurt from local dairy, farmers market seasonal fruit, and Seasonal granola (GF)"
-      },
-      {
-        "title": "Soft Pretzels",
-        "desc": "(sweet or savory)"
       }
     ]
   },
@@ -49,15 +37,14 @@
         "title": "Tiramisu Cheesecake"
       },
       {
-        "title": "Chocolate Chip Cookies",
-        "desc": "(with or without nuts)"
+        "title": "Cookies",
+        "desc": "(chocolate chip, black strap molasses, mint chip, tonka bean shortbread, chocolate sable, brown sugar, cocoa nib alfajores)"
       },
       {
         "title": "Red Velvet Brownies"
       },
       {
-        "title": "Sexy Brownie",
-        "desc": "with brownie, oreo, and blondie layers"
+        "title": "Bread Pudding with seasonal accompaniment"
       },
       {
         "title": "Sesame Cocoa Bites"
@@ -72,7 +59,7 @@
       },
       {
         "title": "Fair Trade Chocolate Truffles",
-        "desc": "Dark Chocolate Orange, Milk Chocolate Honey, Vegan and Seasonal Flavors Available (GF)"
+        "desc": "Dark Chocolate Orange, Dark Chocolate Espresso, Milk Chocolate Honey, Vegan and Seasonal Flavors Available (GF)"
       }
     ]
   },
@@ -88,20 +75,20 @@
         "desc": "with seasonal accompaniment (GF)"
       },
       {
-        "title": "Dirt ‘n Worms",
-        "desc": "with chocolate cremeux, soil and whipped cream"
+        "title": "Mint-Chocolate",
+        "desc": "with chocolate-spearmint cremeux, chocolate soil and whipped cream"
       },
       {
-        "title": "Pretzel Bread Pudding",
-        "desc": "with  whipped cream"
+        "title": "Lemon Posset",
+        "desc": "with seasonal fruit and shortbread"
       },
       {
         "title": "Strawberry Shortcake Trifle",
         "desc": "with orange cake and roasted strawberries (Seasonal)"
       },
       {
-        "title": "Seasonal Pudding Cups",
-        "desc": "(Seasonal)"
+        "title": "Sweet Corn Pot De Creme",
+        "desc": "with dulce de leche and pepita streusel(Seasonal)"
       }
     ]
   },
@@ -133,12 +120,8 @@
         "desc": "with devil's food cake, graham cracker pudding and bruleed swiss meringue"
       },
       {
-        "title": "Cheer Wine Chocolate Cake",
-        "desc": "with vanilla buttercream and luxardo cherries (GF)"
-      },
-      {
         "title": "Brown Butter Cake",
-        "desc": "with tonka bean buttercream and seasonal fruit"
+        "desc": "with tonka bean buttercream and seasonal jam"
       }
     ]
   }

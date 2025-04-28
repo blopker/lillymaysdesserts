@@ -1,5 +1,5 @@
 ---
-import menu from '../menu.json';
+import menu from "../menu.json";
 ---
 
 <section class="section" id="menu">
@@ -12,50 +12,53 @@ import menu from '../menu.json';
       </div>
     </div>
 
-    {menu.map((section, index) => (
-      <div class="menu-section mb-4">
-        <div class="row">
-          <div class="col-12">
-            <h3 class="text-left mb-3 mt-3">{section.title}</h3>
-          </div>
-        </div>
-
-        <div class="row">
-          {section.items.map((item) => (
-            <div class="col-lg-4 col-md-6 mb-3">
-              <div class="menu-item-card shadow-sm h-100">
-                <div class="menu-item-content p-3">
-                  <h5 class="mb-1 font-weight-bold">{item.title}</h5>
-                  {item.desc && (
-                    <p class="text-muted mb-0 small">{item.desc}</p>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {index < menu.length - 1 && (
+    {
+      menu.map((section, index) => (
+        <div class="menu-section mb-4">
           <div class="row">
             <div class="col-12">
-              <hr class="menu-divider" />
+              <h3 class="text-left mb-3 mt-3">{section.title}</h3>
             </div>
           </div>
-        )}
-      </div>
-    ))}
+
+          <div class="row">
+            {section.items.map((item) => (
+              <div class="col-lg-4 col-md-6 mb-3">
+                <div class="menu-item-card shadow-sm h-100">
+                  <div class="menu-item-content p-3">
+                    <h5 class="mb-1 font-weight-bold">{item.title}</h5>
+                    {item.desc && (
+                      <p class="text-muted mb-0 small">{item.desc}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {index < menu.length - 1 && (
+            <div class="row">
+              <div class="col-12">
+                <hr class="menu-divider" />
+              </div>
+            </div>
+          )}
+        </div>
+      ))
+    }
 
     <div class="row mt-3">
       <div class="col-12">
         <div class="menu-notes p-2 text-center">
           <p class="mb-1 small">
-            ***Lilly May's works to use local vendors and products whenever possible.
-            Therefore all menu items listed are subject to change based on seasonality
-            and availability.
+            ***Lilly May's works to use local vendors and products whenever
+            possible. Therefore all menu items listed are subject to change
+            based on seasonality and availability.
           </p>
           <p class="mb-0 small">
-            ***Inquiries for events of 20 or more people made less than a month before
-            the event date will automatically have a 15% rush order fee added to the Invoice.
+            ***Inquiries for events of 20 or more people made less than a month
+            before the event date will automatically have a 15% rush order fee
+            added to the Invoice.
           </p>
         </div>
       </div>
@@ -79,7 +82,12 @@ import menu from '../menu.json';
 
   .menu-divider {
     height: 1px;
-    background: linear-gradient(to right, rgba(251, 88, 73, 0), rgba(251, 88, 73, 0.5), rgba(251, 88, 73, 0));
+    background: linear-gradient(
+      to right,
+      rgba(251, 88, 73, 0),
+      rgba(251, 88, 73, 0.5),
+      rgba(251, 88, 73, 0)
+    );
     margin: 10px auto;
   }
 

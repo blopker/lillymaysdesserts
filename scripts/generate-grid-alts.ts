@@ -1,8 +1,32 @@
-import { readdir, readFile, writeFile } from "node:fs/promises";
+import { access, readdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { Ollama } from "ollama";
 
 const ollama = new Ollama();
+
+interface GridEntry {
+  href: string;
+  alt_text: string;
+}
+
+async function loadExistingGrid(outputPath: string): Promise<GridEntry[]> {
+  try {
+    await access(outputPath);
+    const content = await readFile(outputPath, "utf-8");
+    return JSON.parse(content) as GridEntry[];
+  } catch (error) {
+    console.log("No existing grid.json found, starting fresh");
+    return [];
+  }
+}
+
+async function saveGrid(
+  outputPath: string,
+  entries: GridEntry[],
+): Promise<void> {
+  const sorted = entries.sort((a, b) => a.href.localeCompare(b.href));
+  await writeFile(outputPath, JSON.stringify(sorted, null, 2));
+}
 
 async function generateAltText(
   imagePath: string,
@@ -43,6 +67,10 @@ async function main() {
   const outputPath = join(process.cwd(), "src", "grid.json");
 
   try {
+    // Load existing grid data
+    let existingEntries = await loadExistingGrid(outputPath);
+    console.log(`Loaded ${existingEntries.length} existing entries`);
+
     // Read all files in the grid directory
     const files = await readdir(inputDir);
 
@@ -51,34 +79,66 @@ async function main() {
       /\.(jpg|jpeg|png|webp|gif)$/i.test(file),
     );
 
-    console.log(`Found ${imageFiles.length} images to process`);
+    console.log(`Found ${imageFiles.length} images in grid folder`);
 
-    // Process each image
-    const results = [];
+    // Create set of current files for cleanup
+    const currentFileHrefs = new Set(imageFiles.map((file) => `grid/${file}`));
 
-    for (const imageFile of imageFiles) {
+    // Remove entries for files that no longer exist
+    const initialCount = existingEntries.length;
+    existingEntries = existingEntries.filter((entry) =>
+      currentFileHrefs.has(entry.href),
+    );
+    const removedCount = initialCount - existingEntries.length;
+    if (removedCount > 0) {
+      console.log(`Removed ${removedCount} entries for non-existent files`);
+      await saveGrid(outputPath, existingEntries);
+    }
+
+    // Create map of existing entries for quick lookup
+    const existingMap = new Map<string, GridEntry>();
+    existingEntries.forEach((entry) => existingMap.set(entry.href, entry));
+
+    // Filter out images that already have alt text
+    const imagesToProcess = imageFiles.filter((file) => {
+      const href = `grid/${file}`;
+      return !existingMap.has(href);
+    });
+
+    console.log(`${imagesToProcess.length} images need processing`);
+
+    if (imagesToProcess.length === 0) {
+      console.log("All images already have alt text!");
+      return;
+    }
+
+    // Process each remaining image
+    let processedCount = 0;
+    for (const imageFile of imagesToProcess) {
       const imagePath = join(inputDir, imageFile);
       const altText = await generateAltText(imagePath, imageFile);
       console.log(`Generated alt text for ${imageFile}: ${altText}`);
 
-      results.push({
+      // Add new entry
+      existingEntries.push({
         href: `grid/${imageFile}`,
         alt_text: altText,
       });
+
+      // Save after each image
+      await saveGrid(outputPath, existingEntries);
+      processedCount++;
+
+      console.log(
+        `Progress: ${processedCount}/${imagesToProcess.length} images processed`,
+      );
 
       // Add a small delay to avoid overwhelming the model
       await new Promise((resolve) => setTimeout(resolve, 1000));
     }
 
-    // Sort results by filename for consistency
-    results.sort((a, b) => a.href.localeCompare(b.href));
-
-    // Write the results to grid.json
-    await writeFile(outputPath, JSON.stringify(results, null, 2));
-
-    console.log(
-      `\nSuccessfully generated alt text for ${results.length} images`,
-    );
+    console.log(`\nSuccessfully processed ${processedCount} new images`);
+    console.log(`Total entries in grid.json: ${existingEntries.length}`);
     console.log(`Output saved to: ${outputPath}`);
   } catch (error) {
     console.error("Error:", error);

@@ -1,0 +1,101 @@
+---
+import testimonials from "../testimonials.json";
+---
+
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-heading">
+      <h6>What Our Clients Say</h6>
+    </div>
+    <div class="row">
+      {
+        testimonials.map((testimonial) => (
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="testimonial-item">
+              <div class="testimonial-content">
+                <p>"{testimonial.content}"</p>
+              </div>
+              <div class="testimonial-author">
+                <h4>{testimonial.name}</h4>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  #testimonials {
+    margin-top: 20px;
+    padding: 80px 0px;
+    background-color: #f8f9fa;
+  }
+
+  .testimonial-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .testimonial-content {
+    flex: 1;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+  }
+
+  .testimonial-author {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+  }
+
+  .testimonial-author h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fb5849;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 992px) {
+    .testimonial-item {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #testimonials {
+      padding: 60px 0px;
+    }
+
+    .testimonial-item {
+      padding: 20px;
+    }
+
+    .testimonial-content p {
+      -webkit-line-clamp: 8;
+    }
+  }
+</style>

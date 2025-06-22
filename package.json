@@ -7,15 +7,19 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "generate-alts": "tsx --tsconfig scripts/tsconfig.json scripts/generate-grid-alts.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "astro": "^5.7.5",
+    "ollama": "^0.5.0",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@types/gtag.js": "^0.0.20",
+    "@types/node": "*",
     "prettier-plugin-astro": "^0.14.1"
   }
 }
